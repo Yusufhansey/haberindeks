@@ -10,6 +10,8 @@
     "source": "TCMB",
     "readTime": "3 dk",
     "publishedAt": "2 saat önce",
+    "publishedAtISO": "2026-06-14T17:30:00+03:00",
+    "updatedAtISO": "2026-06-14T17:30:00+03:00",
     "featured": true
   },
   {
@@ -23,6 +25,8 @@
     "source": "OpenAI",
     "readTime": "2 dk",
     "publishedAt": "1 saat önce",
+    "publishedAtISO": "2026-06-14T18:30:00+03:00",
+    "updatedAtISO": "2026-06-14T18:30:00+03:00",
     "featured": false
   },
   {
@@ -36,6 +40,8 @@
     "source": "Piyasa",
     "readTime": "3 dk",
     "publishedAt": "4 saat önce",
+    "publishedAtISO": "2026-06-14T15:30:00+03:00",
+    "updatedAtISO": "2026-06-14T15:30:00+03:00",
     "featured": false
   }
 ]

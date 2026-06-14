@@ -11,6 +11,8 @@ export type Article = {
   source: string;
   readTime: string;
   publishedAt: string;
+  publishedAtISO: string;
+  updatedAtISO: string;
   featured: boolean;
 };
 

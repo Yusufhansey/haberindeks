@@ -26,6 +26,24 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: `${article.title} | Haberindeks`,
     description: article.description,
+    alternates: {
+      canonical: `https://haberindeks.com/haber/${article.slug}`,
+    },
+    openGraph: {
+      title: article.title,
+      description: article.description,
+      url: `https://haberindeks.com/haber/${article.slug}`,
+      siteName: "Haberindeks",
+      locale: "tr_TR",
+      type: "article",
+      publishedTime: article.publishedAtISO,
+      modifiedTime: article.updatedAtISO,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.description,
+    },
   };
 }
 
@@ -37,8 +55,46 @@ export default async function NewsDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const articleUrl = `https://haberindeks.com/haber/${article.slug}`;
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: article.title,
+    description: article.description,
+    datePublished: article.publishedAtISO,
+    dateModified: article.updatedAtISO,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl,
+    },
+    author: {
+      "@type": "Organization",
+      name: "Haberindeks",
+      url: "https://haberindeks.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Haberindeks",
+      url: "https://haberindeks.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://haberindeks.com/logo.png",
+      },
+    },
+    articleSection: article.category,
+    inLanguage: "tr-TR",
+  };
+
   return (
     <main className="site-shell">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema),
+        }}
+      />
+
       <header className="topbar">
         <a href="/" className="logo">
           haberindeks
@@ -68,7 +124,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
           <span>·</span>
           <span>{article.readTime}</span>
           <span>·</span>
-          <span>{article.publishedAt}</span>
+          <time dateTime={article.publishedAtISO}>{article.publishedAt}</time>
         </div>
 
         <div className="article-body">
