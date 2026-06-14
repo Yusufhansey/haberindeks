@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "slug": "tcmb-faizi-sabit-tuttu-kredi-cekecekler-icin-ne-degisti",
+    "title": "TCMB faizi sabit tuttu — kredi çekecekler için ne değişti?",
+    "description": "Merkez Bankası politika faizini sabit tuttu. Bu karar konut kredisi, taşıt kredisi ve ihtiyaç kredisi faizlerini nasıl etkiliyor?",
+    "content": "Merkez Bankası'nın faiz kararı, kredi piyasasında doğrudan ve dolaylı etkiler yaratabilir. Bankaların ihtiyaç kredisi, taşıt kredisi ve konut kredisi faizleri karar sonrası yeniden şekillenebilir. Uzmanlara göre kısa vadede kredi faizlerinde hızlı bir düşüş beklenmezken, piyasa beklentileri önümüzdeki dönemde daha belirleyici olacak.",
+    "category": "Finans",
+    "categorySlug": "finans",
+    "source": "TCMB",
+    "readTime": "3 dk",
+    "publishedAt": "2 saat önce",
+    "featured": true
+  },
+  {
+    "id": "2",
+    "slug": "openai-yeni-modelini-duyurdu",
+    "title": "OpenAI yeni modelini duyurdu — Türkiye’deki kullanıcılar ne zaman erişebilir?",
+    "description": "OpenAI yeni yapay zekâ modelini duyurdu. Modelin Türkiye’deki kullanıcılar için ne zaman erişilebilir olacağı merak ediliyor.",
+    "content": "OpenAI tarafından duyurulan yeni model, yapay zekâ araçlarının günlük kullanımda daha güçlü hale gelmesini hedefliyor. Modelin farklı ülkelerde kademeli olarak kullanıma açılması beklenirken, Türkiye’deki erişim tarihi platformun resmi açıklamalarına göre netleşecek.",
+    "category": "Teknoloji",
+    "categorySlug": "teknoloji",
+    "source": "OpenAI",
+    "readTime": "2 dk",
+    "publishedAt": "1 saat önce",
+    "featured": false
+  },
+  {
+    "id": "3",
+    "slug": "dolar-tl-bu-hafta-nereye-gider",
+    "title": "Dolar/TL bu hafta nereye gider? Analistlerin beklentileri",
+    "description": "Piyasalarda dolar/TL beklentileri, enflasyon verileri ve Merkez Bankası kararlarıyla birlikte şekilleniyor.",
+    "content": "Dolar/TL tarafında haftalık beklentiler, iç piyasadaki faiz politikası, küresel dolar endeksi ve yatırımcı risk iştahına bağlı olarak değişiyor. Analistler kısa vadeli hareketlerde veri akışının belirleyici olacağını belirtiyor.",
+    "category": "Finans",
+    "categorySlug": "finans",
+    "source": "Piyasa",
+    "readTime": "3 dk",
+    "publishedAt": "4 saat önce",
+    "featured": false
+  }
+]
