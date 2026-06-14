@@ -1,65 +1,143 @@
-import Image from "next/image";
+const featured = {
+  category: "ÖNE ÇIKAN",
+  title: "TCMB faizi sabit tuttu — kredi çekecekler için ne değişti?",
+  description:
+    "Merkez Bankası politika faizini %45’te sabit bıraktı. Bu karar konut kredisi, taşıt kredisi ve ihtiyaç kredisi faizlerini nasıl etkiliyor? Uzmanlar ne diyor?",
+  source: "TCMB",
+  readTime: "3 dk okuma",
+  publishedAt: "2 saat önce",
+};
+
+const cards = [
+  {
+    category: "Teknoloji",
+    title: "OpenAI yeni modelini duyurdu — Türkiye’deki kullanıcılar ne zaman erişebilir?",
+    publishedAt: "1 saat önce",
+    readTime: "2 dk",
+  },
+  {
+    category: "Finans",
+    title: "Dolar/TL bu hafta nereye gider? Analistlerin beklentileri",
+    publishedAt: "4 saat önce",
+    readTime: "3 dk",
+  },
+  {
+    category: "Gündem",
+    title: "MEB 2025-2026 sınav takvimi açıklandı — tüm tarihler burada",
+    publishedAt: "6 saat önce",
+    readTime: "4 dk",
+  },
+  {
+    category: "Finans",
+    title: "SPK yeni kripto para düzenlemesini Resmi Gazete’de yayımladı",
+    publishedAt: "8 saat önce",
+    readTime: "2 dk",
+  },
+];
+
+const mostRead = [
+  {
+    title: "YKS başvuru tarihleri 2025 — adım adım nasıl yapılır?",
+    source: "ÖSYM",
+    publishedAt: "12 saat önce",
+  },
+  {
+    title: "Asgari ücret 2025 zammı ne kadar olacak? Hesaplama tablosu",
+    source: "Çalışma Bakanlığı",
+    publishedAt: "1 gün önce",
+  },
+  {
+    title: "WhatsApp yeni gizlilik politikası — kabul etmezseniz ne olur?",
+    source: "Meta",
+    publishedAt: "2 gün önce",
+  },
+];
+
+const filters = [
+  "Tümü",
+  "Merkez Bankası",
+  "Yapay Zeka",
+  "Vergi & Mevzuat",
+  "Borsa",
+  "MEB & Eğitim",
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="site-shell">
+      <header className="topbar">
+        <div className="logo">haberindeks</div>
+
+        <nav className="nav">
+          <a href="#">Anasayfa</a>
+          <a href="#">Finans</a>
+          <a href="#">Teknoloji</a>
+          <a href="#">Gündem</a>
+        </nav>
+      </header>
+
+      <section className="filters" aria-label="Haber kategorileri">
+        {filters.map((filter, index) => (
+          <button
+            key={filter}
+            className={index === 0 ? "filter active" : "filter"}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            {filter}
+          </button>
+        ))}
+      </section>
+
+      <section className="hero">
+        <div className="section-label">⚡ {featured.category}</div>
+
+        <h1>{featured.title}</h1>
+
+        <p>{featured.description}</p>
+
+        <div className="meta">
+          <span className="source">{featured.source}</span>
+          <span>·</span>
+          <span>{featured.readTime}</span>
+          <span>·</span>
+          <span>{featured.publishedAt}</span>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="card-grid" aria-label="Son haberler">
+        {cards.map((item) => (
+          <article className="news-card" key={item.title}>
+            <div className="card-category">{item.category}</div>
+            <h2>{item.title}</h2>
+            <div className="card-meta">
+              {item.publishedAt} · {item.readTime}
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="most-read">
+        <h3>Bugün en çok okunanlar</h3>
+
+        <div className="most-read-list">
+          {mostRead.map((item, index) => (
+            <article className="most-read-item" key={item.title}>
+              <div className="rank">{String(index + 1).padStart(2, "0")}</div>
+
+              <div>
+                <h4>{item.title}</h4>
+                <p>
+                  {item.source} · {item.publishedAt}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <footer className="footer">
+        <span>haberindeks.com · Kaynağından, net ve sade</span>
+        <span className="verified">✓ Kaynak doğrulandı</span>
+      </footer>
+    </main>
   );
 }
