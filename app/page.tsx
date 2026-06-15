@@ -95,6 +95,9 @@ export default function Home() {
           <section className="card-grid card-grid-v2" aria-label="Son haberler">
             {cards.map((item) => (
               <article className="news-card news-card-v2" key={item.slug}>
+			  <div className={`card-visual visual-${item.categorySlug}`}>
+                <span>{item.category}</span>
+                </div>
                 <div className="card-topline">
                   <span className="card-category">{item.category}</span>
                   <span>{item.publishedAt}</span>
